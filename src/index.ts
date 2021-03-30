@@ -3,6 +3,7 @@ import { config } from "./config/config"
 
 // Functions
 import { ping } from "./functions/ping"
+import { menu } from "./functions/menu"
 
 const client: Client = new Client({
   partials: ["MESSAGE", "REACTION"],
@@ -15,6 +16,10 @@ client.on("ready", () => {
     client?.user?.setStatus("online")
     // handles the maximum available event or command listener
     client.setMaxListeners(20)
+
+    // Commands
+    ping(client)
+    menu(client)
   }
 })
 
@@ -23,7 +28,5 @@ client.on("message", (message) => {
   if (message.author === client.user) return
   if (message.author.bot) return
 })
-
-ping(client, "ping")
 
 client.login(`${config.token}`)
