@@ -2,10 +2,10 @@ import { Client, Message, MessageEmbed } from "discord.js"
 import { command } from "../command/command"
 import { colors } from "../utils/colors"
 
-export const ping = (client: Client) => {
+export const ping = (client: Client): void => {
   let aliases = ["ping"]
 
-  command(client, aliases, (message: Message) => {
+  command(client, aliases, (message: Message): void => {
     const embed: MessageEmbed = new MessageEmbed()
       .setTitle("Gordon Ramsay")
       .setDescription("Pong!")

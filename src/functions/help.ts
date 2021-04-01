@@ -1,19 +1,22 @@
 import { Client, Message, MessageEmbed } from "discord.js"
 import { command } from "../command/command"
 import { colors } from "../utils/colors"
+import { config } from "../config/config"
 
-export const menu = (client: Client) => {
-  let aliases = ["menu", "carta"]
+export const help = (client: Client): void => {
+  let aliases = ["help", "h"]
 
-  command(client, aliases, (message: Message) => {
+  command(client, aliases, (message: Message): void => {
     const { guild } = message
     const { name }: any = guild
     const icon: any = guild?.iconURL()
 
     const embed: MessageEmbed = new MessageEmbed()
       .setAuthor(name, icon)
-      .setTitle("Menu")
-      .setColor(colors.lemon).setDescription(`
+      .setTitle("Help?")
+      .setColor(colors.lemon)
+      .setDescription(
+        `
       Bienvenidos a la cafeteria de callMeDev :D
       Puedes pedir alguna comida o bebida de nuestro menu
       
@@ -21,7 +24,10 @@ export const menu = (client: Client) => {
         - pan
 
       **bebidas**
-      `)
+        - coca
+      `
+      )
+      .setFooter(`Solamente coloca el prefijo ${config?.prefix}`)
 
     message.channel.send(embed)
   })
