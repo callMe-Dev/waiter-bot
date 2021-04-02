@@ -1,20 +1,24 @@
 import { Client, Message, MessageEmbed, MessageAttachment } from "discord.js"
-import { random } from "../../utils/randomNumber"
 import { command } from "../../command/command"
 import { colors } from "../../utils/colors"
-import { foods } from "../../utils/foods"
 import { IFood } from "../../interfaces/"
+import { foods } from "../../utils/foods"
 
-export const food = (client: Client): void => {
-  let aliases = ["food"]
-
-  command(client, aliases, async (message: Message) => {
+/**
+ *
+ * @param client: Client
+ * @param aliases: Array<string> | String[]
+ * @param index: number
+ *
+ */
+export const food = (
+  client: Client,
+  aliases: Array<string>,
+  index: number
+): void => {
+  command(client, aliases, (message: Message) => {
     const foodReturned = foods.map((food: IFood): void => {
-      const randomLen: number = random(foods.length)
-
-      if (randomLen === food.index) {
-        console.log(randomLen, food.index)
-
+      if (index === food.index) {
         const msgAtachment: MessageAttachment = new MessageAttachment(
           `${food?.imgUrl}`,
           `${food?.imgName}`

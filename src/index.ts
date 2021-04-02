@@ -2,10 +2,11 @@ import { Client } from "discord.js"
 import { config } from "./config/config"
 
 // Functions
+import { food } from "./functions/foods/[someFood]"
 import { ping } from "./functions/ping"
 import { help } from "./functions/help"
-// import { pan } from "./functions/foods/pan"
-import { food } from "./functions/foods/[someFood]"
+import { foods } from "./utils/foods"
+import { IFood } from "./interfaces"
 
 const client: Client = new Client({
   partials: ["MESSAGE", "REACTION"],
@@ -22,7 +23,8 @@ client.on("ready", () => {
     // Commands
     ping(client)
     help(client)
-    food(client)
+
+    food(client, ["pan"], foods[0].index)
   }
 })
 
