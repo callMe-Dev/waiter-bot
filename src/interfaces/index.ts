@@ -1,4 +1,11 @@
 export interface IConfig {
-  token: String | Number | undefined
-  prefix: String
+  token: string | Number | undefined
+  prefix: string
+}
+
+export interface IFood {
+  name: string
+  imgUrl: string
+  imgName: string
+  index: number
 }

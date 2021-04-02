@@ -4,7 +4,8 @@ import { config } from "./config/config"
 // Functions
 import { ping } from "./functions/ping"
 import { help } from "./functions/help"
-import { pan } from "./functions/foods/pan"
+// import { pan } from "./functions/foods/pan"
+import { food } from "./functions/foods/[someFood]"
 
 const client: Client = new Client({
   partials: ["MESSAGE", "REACTION"],
@@ -21,7 +22,7 @@ client.on("ready", () => {
     // Commands
     ping(client)
     help(client)
-    pan(client)
+    food(client)
   }
 })
 
