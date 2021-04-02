@@ -6,7 +6,7 @@ import { food } from "./functions/foods/[someFood]"
 import { ping } from "./functions/ping"
 import { help } from "./functions/help"
 import { foods } from "./utils/foods"
-import { IFood } from "./interfaces"
+import { colors } from "./utils/colors"
 
 const client: Client = new Client({
   partials: ["MESSAGE", "REACTION"],
@@ -25,6 +25,8 @@ client.on("ready", () => {
     help(client)
 
     food(client, ["pan"], foods[0].index)
+    food(client, ["coca"], foods[1].index, colors.salmon)
+    food(client, ["beef"], foods[2].index, colors.lightBrown)
   }
 })
 

@@ -11,4 +11,10 @@ export const foods = [
     imgName: "coca-cola.png",
     index: 1,
   },
+  {
+    name: "Beef",
+    imgUrl: "./src/images/beef.png",
+    imgName: "beef.png",
+    index: 2,
+  },
 ]
