@@ -23,12 +23,11 @@ export const command = (
     const contentLower: string = content.toLowerCase()
 
     aliases.forEach((alias: String) => {
-      const command: string = `${prefix}${alias}`
+      const cmd: string = `${prefix}${alias}`
 
-      const commandLower: string = command.toLowerCase()
-
+      const commandLower: string = cmd.toLowerCase()
       if (
-        contentLower.startsWith(`${commandLower} `) ||
+        contentLower.startsWith(`${commandLower}`) ||
         contentLower === commandLower
       ) {
         console.log(`Running the command ${commandLower}`)
