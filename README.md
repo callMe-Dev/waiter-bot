@@ -16,7 +16,7 @@ Tambien puedes unirte al `Discord` de la comunidad y junto a mas developers crea
 
 ## Codigo de Conducta
 
-Antes de hacer cualquier cosa te recomendamos leer el [codigo de conducta](./Code-Of-Conduct)
+Antes de hacer cualquier cosa te recomendamos leer el [codigo de conducta](./Code-Of-Conduct.md)
 Para evitar errores y cosas extrañas al hacer tu **pull request** o agregar alguna feature
 ### 🚀 Discord: https://discord.gg/RTdXPfbz3K
 
