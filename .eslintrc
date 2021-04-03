@@ -1,0 +1,22 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-empty": "warn",
+    "no-extra-semi": "error",
+    "eqeqeq": "error",
+    "no-proto": "warn",
+    "no-return-await": "warn",
+    "no-label-var": "warn",
+    "semi": "off",
+    "no-irregular-whitespace": "warn",
+    "default-case": "error",
+    "no-alert": "error"
+  }
+}
