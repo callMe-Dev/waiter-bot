@@ -1,10 +1,12 @@
 import { Client } from "discord.js"
 import { config } from "./config/config"
-
+import { pan } from "./functions/foods/pan"
+import { help } from "./functions/help"
 // Functions
 import { ping } from "./functions/ping"
-import { help } from "./functions/help"
-import { pan } from "./functions/foods/pan"
+import { search } from "./functions/search"
+import FoodSearch from "./modules/FoodSearch"
+
 
 const client: Client = new Client({
   partials: ["MESSAGE", "REACTION"],
@@ -22,6 +24,7 @@ client.on("ready", () => {
     ping(client)
     help(client)
     pan(client)
+    search(client);
   }
 })
 
@@ -32,3 +35,6 @@ client.on("message", (message) => {
 })
 
 client.login(`${config.token}`)
+
+const f = new FoodSearch('pan');
+f.set();
