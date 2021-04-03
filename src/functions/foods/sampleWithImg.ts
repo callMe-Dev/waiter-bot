@@ -2,7 +2,7 @@ import { Client, Message, MessageEmbed, MessageAttachment } from "discord.js"
 import { command } from "../../command/command"
 import { colors } from "../../utils/colors"
 
-export const pan = (client: Client): void => {
+export const sampleWithImg = (client: Client): void => {
   let aliases = ["pan"]
 
   // Toma el directorio como raiz
