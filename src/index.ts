@@ -2,7 +2,6 @@ import { Client } from "discord.js"
 import { config } from "./config/config"
 
 // Functions
-import { pan } from "./functions/foods/pan"
 import { help } from "./functions/help"
 import { food } from "./functions/foods/[someFood]"
 import { ping } from "./functions/ping"
@@ -27,8 +26,7 @@ client.on("ready", () => {
     // Commands
     ping(client)
     help(client)
-    pan(client)
-    search(client);
+    search(client)
 
     food(client, ["pan"], foods[0].index)
     food(client, ["coca"], foods[1].index, colors.salmon)
