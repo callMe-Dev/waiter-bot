@@ -39,14 +39,20 @@ Ya cuando tengas un **host** de tu gusto (nosotros te recomendamos **Heroku** & 
 Pero antes de hace **deploy** agregar **tu token a las variables de entorno**
 Con un archivo `.env`
 <br />
-<code>$ touch .env</code>
+```bash
+$ touch .env
+```
 
 Y dentro agrega:
 <br />
-`DISCORD_TOKEN= tu-Token-Aqui`
+```dotenv
+DISCORD_TOKEN= tu-Token-Aqui
+```
 
 Con esto estara listo para su uso, con todas las funcionalidades disponibles :D
 
 Y ahora si puedes revisar el archivo **package.json** y ver los scripts disponibles
 <br />
-`$ npm run dev`
+```bash
+$ npm run dev
+```
