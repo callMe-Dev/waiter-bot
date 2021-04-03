@@ -8,7 +8,8 @@
     "start": "node ./build/index.js",
     "tsc": "tsc",
     "lint": "eslint . --ext .ts",
-    "lint-and-fix": "eslint . --ext .ts --fix"
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "pretty": "npx prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
     "@typescript-eslint/parser": "^4.20.0",
     "eslint": "^7.23.0",
     "nodemon": "^2.0.7",
+    "prettier": "2.2.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
   }
