@@ -5,7 +5,6 @@ import { help } from "./functions/help"
 // Functions
 import { ping } from "./functions/ping"
 import { search } from "./functions/search"
-import FoodSearch from "./modules/FoodSearch"
 
 
 const client: Client = new Client({
@@ -35,6 +34,3 @@ client.on("message", (message) => {
 })
 
 client.login(`${config.token}`)
-
-const f = new FoodSearch('pan');
-f.set();
