@@ -3,5 +3,5 @@ import { IConfig } from "../interfaces"
 
 export const config: IConfig = {
   token: process.env.DISCORD_TOKEN,
-  prefix: "~",
+  prefix: ".",
 }

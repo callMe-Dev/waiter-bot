@@ -2,6 +2,8 @@ import { Client, Message, MessageEmbed } from "discord.js"
 import { command } from "../command/command"
 import { colors } from "../utils/colors"
 import { config } from "../config/config"
+import { foods } from "../utils/foods"
+import { IFood } from "../interfaces"
 
 export const help = (client: Client): void => {
   let aliases = ["help", "h"]
@@ -20,14 +22,20 @@ export const help = (client: Client): void => {
       Bienvenidos a la cafeteria de callMeDev :D
       Puedes pedir alguna comida o bebida de nuestro menu
       
-      **comida**
-        - pan
-
-      **bebidas**
-        - coca
+      **Prueba con alguno de nuestros comandos**
       `
       )
-      .setFooter(`Solamente coloca el prefijo ${config?.prefix}`)
+      .addFields(
+        foods.map((food: IFood) => ({
+          name: food.name,
+          value: `${config.prefix}${food.name}`,
+        }))
+      )
+      .setFooter(`Solamente coloca el prefijo ${config?.prefix} `)
+      .setTimestamp()
+      .setThumbnail(
+        "https://media.giphy.com/media/1pA2TskF33668iVDaW/giphy.gif"
+      )
 
     message.channel.send(embed)
   })
