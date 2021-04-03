@@ -31,3 +31,22 @@ En este proyecto usamos los `projects` de github, revisalo para que puedas ver l
 Algunos de los comandos estaran listados dentro de un archivo **readme.md** dentro de la carpeta **/functions**
 [📑 Puedes verlo aqui](./src/functions/README.md)
 
+# Run this Bot?
+
+Para poder correr este bot dentro de tu servidor solamente necesitas clonar este **repositorio** en tu maquina local
+Ya cuando tengas un **host** de tu gusto (nosotros te recomendamos **Heroku** & **Glitch**), despliegalo dentro de la plataforma seleccionada
+
+Pero antes de hace **deploy** agregar **tu token a las variables de entorno**
+Con un archivo `.env`
+<br />
+<code>$ touch .env</code>
+
+Y dentro agrega:
+<br />
+`DISCORD_TOKEN= tu-Token-Aqui`
+
+Con esto estara listo para su uso, con todas las funcionalidades disponibles :D
+
+Y ahora si puedes revisar el archivo **package.json** y ver los scripts disponibles
+<br />
+`$ npm run dev`
