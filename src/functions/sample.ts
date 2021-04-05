@@ -4,20 +4,20 @@
  *
  */
 
-import { Client, Message, MessageEmbed } from "discord.js"
-import { command } from "../command/command"
-import { colors } from "../utils/colors"
+import { Client, Message, MessageEmbed } from 'discord.js'
+import { command } from '../command/command'
+import { colors } from '../utils/colors'
 
 // Remuevan el :any al momento de hacer su comando
 export const [name]: any = (client: Client): void => {
-  let aliases = [""]
+  const aliases = ['']
 
   command(client, aliases, (message: Message): void => {
     const embed: MessageEmbed = new MessageEmbed()
-      .setTitle("")
-      .setDescription("")
+      .setTitle('')
+      .setDescription('')
       .setColor(colors.red)
-      .setImage("")
+      .setImage('')
 
     message.channel.send(embed)
   })

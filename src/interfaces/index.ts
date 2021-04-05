@@ -1,5 +1,5 @@
 export interface IConfig {
-  token: string | Number | undefined
+  token: string | number | undefined
   prefix: string
 }
 
@@ -8,4 +8,11 @@ export interface IFood {
   imgUrl: string
   imgName: string
   index: number
+}
+
+export interface FoodItem {
+  name: string
+  valid: boolean
+  image: string
+  description: string
 }

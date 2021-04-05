@@ -1,12 +1,12 @@
-import { Client, Message, MessageEmbed } from "discord.js"
-import { command } from "../command/command"
-import { colors } from "../utils/colors"
-import { config } from "../config/config"
-import { foods } from "../utils/foods"
-import { IFood } from "../interfaces"
+import { Client, Message, MessageEmbed } from 'discord.js'
+import { command } from '../command/command'
+import { colors } from '../utils/colors'
+import { config } from '../config/config'
+import { foods } from '../utils/foods'
+import { IFood } from '../interfaces'
 
 export const help = (client: Client): void => {
-  let aliases = ["help", "h"]
+  const aliases = ['help', 'h']
 
   command(client, aliases, (message: Message): void => {
     const { guild } = message
@@ -15,7 +15,7 @@ export const help = (client: Client): void => {
 
     const embed: MessageEmbed = new MessageEmbed()
       .setAuthor(name, icon)
-      .setTitle("Help?")
+      .setTitle('Help?')
       .setColor(colors.lemon)
       .setDescription(
         `
@@ -34,7 +34,7 @@ export const help = (client: Client): void => {
       .setFooter(`Solamente coloca el prefijo ${config?.prefix} `)
       .setTimestamp()
       .setThumbnail(
-        "https://media.giphy.com/media/1pA2TskF33668iVDaW/giphy.gif"
+        'https://media.giphy.com/media/1pA2TskF33668iVDaW/giphy.gif'
       )
 
     message.channel.send(embed)

@@ -1,10 +1,10 @@
-import { Client, Message, MessageEmbed } from "discord.js"
-import { command } from "../command/command"
-import FoodSearch from "../modules/FoodSearch"
-import { colors } from "../utils/colors"
+import { Client, Message, MessageEmbed } from 'discord.js'
+import { command } from '../command/command'
+import FoodSearch from '../modules/FoodSearch'
+import { colors } from '../utils/colors'
 
 export const search = (client: Client): void => {
-  let aliases = ["search"]
+  const aliases = ['search']
 
   command(
     client,
@@ -12,14 +12,14 @@ export const search = (client: Client): void => {
     async (message: Message): Promise<void> => {
       let msgLoading: any = null
       try {
-        const args = message.content.split(" ").slice(1)
-        const search = args.join(" ")
+        const args = message.content.split(' ').slice(1)
+        const search = args.join(' ')
         if (search) {
-          console.log("Args", args)
+          console.log('Args', args)
           /** Loading */
           const embedLoading: MessageEmbed = new MessageEmbed()
-            .setTitle("Loading")
-            .setDescription("Searching for food...")
+            .setTitle('Loading')
+            .setDescription('Searching for food...')
           msgLoading = await message.reply(embedLoading)
 
           const foodSearch = new FoodSearch(search)
@@ -37,11 +37,11 @@ export const search = (client: Client): void => {
 
           msgLoading.edit(embedFood)
         } else {
-          throw Error("No name arg")
+          throw Error('No name arg')
         }
       } catch (err) {
         const embed: MessageEmbed = new MessageEmbed()
-          .setTitle("Error")
+          .setTitle('Error')
           .setDescription(err.message as string)
         if (msgLoading) {
           msgLoading.edit(embed)
