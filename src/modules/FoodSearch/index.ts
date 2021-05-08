@@ -20,6 +20,7 @@ class FoodSearch {
     this.categories = cat
     const f = cat.find((el) => el.includes('Gastronomía')) !== undefined
     this.food.valid = f
+
     if (!this.food.valid) {
       const l = summary.toLowerCase()
       this.food.valid =
@@ -53,17 +54,20 @@ class FoodSearch {
       const res = data.results[0]
       const page = await w.page(res)
       this.food.name = res
+
       const summary = await page.summary()
       await this.check(page, summary)
+
       if (this.food.valid) {
         const rawImages = await page.rawImages()
-        console.log('PAGE', rawImages)
+
         const images = await page.images()
         const fImage = rawImages.find(
           (el) =>
             el.title &&
             el.title.toLocaleLowerCase().includes(this.food.name.toLowerCase())
         )
+
         if (fImage !== undefined) {
           const info = fImage
           this.food.image = (info.imageinfo[0] as any).url
@@ -73,11 +77,13 @@ class FoodSearch {
               el.title.toLowerCase().includes('.jpg') ||
               el.title.toLowerCase().includes('.png')
           )
+
           if (imgObj !== undefined) {
             const info = imgObj
             this.food.image = (info.imageinfo[0] as any).url
           }
         }
+
         this.food.description = this.truncateString(summary, 500)
         await this.setGoogleImage()
       }

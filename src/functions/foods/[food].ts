@@ -4,18 +4,18 @@ import {
   MessageEmbed,
   MessageAttachment,
   Guild,
-} from "discord.js"
-import { command } from "../../command/command"
-import { colors } from "../../utils/colors"
-import { IFood } from "../../interfaces/"
-import { foods } from "../../utils/foods"
+} from 'discord.js'
+import { command } from '../../command/command'
+import { colors } from '../../utils/colors'
+import { IFood } from '../../interfaces'
+import { foods } from '../../utils/foods'
 
 /**
  *
- * @param client: Client
- * @param aliases: Array<string> | String[]
- * @param index: number
- * @param color: string | number
+ * @param {Client} client
+ * @param {Array<string> | String[]} aliases
+ * @param {number} index
+ * @param {string} color
  */
 export const food = (
   client: Client,
@@ -28,7 +28,7 @@ export const food = (
     const { name } = guild
     const icon = guild.iconURL()
 
-    const foodReturned = foods.map((food: IFood): void => {
+    foods.map((food: IFood): void => {
       if (index === food.index) {
         const msgAtachment: MessageAttachment = new MessageAttachment(
           `${food?.imgUrl}`,

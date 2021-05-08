@@ -3,7 +3,7 @@ import { config } from './config/config'
 
 // Functions
 import { help } from './functions/help'
-import { food } from './functions/foods/[someFood]'
+import { food } from './functions/foods/[food]'
 import { ping } from './functions/ping'
 import { search } from './functions/search'
 
@@ -30,7 +30,7 @@ client.on('ready', () => {
     search(client)
     weird(client)
 
-    food(client, foods[0].cmdName, foods[0].index)
+    food(client, foods[0].cmdName, foods[0].index, colors.salmon)
     food(client, foods[1].cmdName, foods[1].index, colors.lightBrown)
   }
 })
