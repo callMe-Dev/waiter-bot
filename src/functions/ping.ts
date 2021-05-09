@@ -2,6 +2,10 @@ import { Client, Message, MessageEmbed } from 'discord.js'
 import { command } from '../command/command'
 import { colors } from '../utils/colors'
 
+/**
+ *
+ * @param {Client} client
+ */
 export const ping = (client: Client): void => {
   const aliases = ['ping']
 

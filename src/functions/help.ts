@@ -5,6 +5,10 @@ import { config } from '../config/config'
 import { foods } from '../utils/foods'
 import { IFood } from '../interfaces'
 
+/**
+ *
+ * @param {Client} client
+ */
 export const help = (client: Client): void => {
   const aliases = ['help', 'h']
 

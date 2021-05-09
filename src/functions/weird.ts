@@ -2,7 +2,11 @@ import { Client, Message } from 'discord.js'
 import { command } from '../command/command'
 import { random } from '../utils/randomNumber'
 
-export const weird = (client: Client) => {
+/**
+ *
+ * @param {Client} client
+ */
+export const weird = (client: Client): void => {
   const aliases = ['weird']
 
   const weirdEmojis: Array<string> = [

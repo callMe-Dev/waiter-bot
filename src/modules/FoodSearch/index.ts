@@ -14,7 +14,10 @@ class FoodSearch {
   constructor(search: string) {
     this.search = search
   }
-  /** Verify if the item searched is food or not, may be improved */
+  /** Verify if the item searched is food or not, may be improved
+   * @param {Page} page
+   * @param {string} summary
+   */
   async check(page: Page, summary: string) {
     const cat = await page.categories()
     this.categories = cat
@@ -40,7 +43,13 @@ class FoodSearch {
     }
   }
 
-  truncateString(str: string, num: number) {
+  /**
+   *
+   * @param {number} str
+   * @param {string} num
+   * @returns string
+   */
+  truncateString(str: string, num: number): string {
     if (str.length <= num) {
       return str
     }
