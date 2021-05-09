@@ -24,7 +24,7 @@ Para evitar errores y cosas extrañas al hacer tu **pull request** o agregar alg
 
 En este proyecto usamos los `projects` de github, revisalo para que puedas ver las nuevas tareas añadidas o nuevas features que se iran añadiendo :)
 
-[🖇 waiter-bot / Projects](https://github.com/callMe-Dev/mesero-bot/projects)
+[🖇 waiter-bot / Projects](https://github.com/callMe-Dev/waiter-bot/projects)
 
 ## Comandos
 
