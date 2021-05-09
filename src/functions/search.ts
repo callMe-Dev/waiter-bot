@@ -7,7 +7,7 @@ import { colors } from '../utils/colors'
  * @param {Client} client
  */
 export const search = (client: Client): void => {
-  const aliases = ['search']
+  const aliases = ['search', 's']
 
   command(
     client,
